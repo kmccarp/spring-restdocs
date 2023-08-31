@@ -102,7 +102,7 @@ public class JsonFieldProcessorTests {
 		Map<String, Object> payload = new HashMap<>();
 		Map<String, Object> entry = new HashMap<>();
 		entry.put("b", "bravo");
-		List<Map<String, Object>> alpha = Arrays.asList(entry, new HashMap<String, Object>());
+		List<Map<String, Object>> alpha = Arrays.asList(entry, new HashMap<>());
 		payload.put("a", alpha);
 		assertThat(this.fieldProcessor.extract("a[].b", payload).getValue())
 			.isEqualTo(Arrays.asList("bravo", ExtractedField.ABSENT));

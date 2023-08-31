@@ -77,7 +77,7 @@ class WebTestClientRequestConverter implements RequestConverter<ExchangeResult> 
 			.block()
 			.values()
 			.stream()
-			.flatMap((parts) -> parts.stream().map(this::createOperationRequestPart))
+			.flatMap(parts -> parts.stream().map(this::createOperationRequestPart))
 			.collect(Collectors.toList());
 	}
 
