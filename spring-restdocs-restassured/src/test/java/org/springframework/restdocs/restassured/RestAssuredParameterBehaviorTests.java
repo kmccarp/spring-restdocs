@@ -46,12 +46,12 @@ public class RestAssuredParameterBehaviorTests {
 
 	private OperationRequest request;
 
-	private RequestSpecification spec = RestAssured.given()
-		.port(tomcat.getPort())
-		.filter((request, response, context) -> {
-			this.request = this.factory.convert(request);
-			return context.next(request, response);
-		});
+    private final RequestSpecification spec = RestAssured.given()
+            .port(tomcat.getPort())
+            .filter((request, response, context) -> {
+                this.request = this.factory.convert(request);
+                return context.next(request, response);
+            });
 
 	@Test
 	public void queryParameterOnGet() {
